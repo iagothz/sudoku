@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Sudoku</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <h3>Jogo Salvo Encontrado</h3>
+            <p>Deseja continuar de onde parou?</p>
+            <div class="confirm-actions">
+                <button id="confirm-no-btn" class="btn-principal">Não, começar um novo jogo</button>
+                <button id="confirm-yes-btn" class="btn-principal">Sim, continuar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal-overlay"></div>
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2> Opções e Controles</h2>
+            <div id="modal-controls-container">
+                <div id="difficulty-selector" class="difficulty-controls">
+                    <button class="difficulty-btn active" data-difficulty="40">Fácil</button>
+                    <button class="difficulty-btn" data-difficulty="50">Médio</button>
+                    <button class="difficulty-btn" data-difficulty="55">Difícil</button>
+                    <button class="difficulty-btn" data-difficulty="58">Extremo</button>
+                </div>
+                <div class="controls">
+                    <button id="new-game-btn" class="btn-principal">Novo Jogo</button>
+                    <button id="solve-btn" class="btn-principal">Resolver</button>
+                    <button id="save-btn" class="btn-principal">Salvar Jogo</button>
+                    <button id="restore-btn" class="btn-principal">Restaurar Jogo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Sudoku</h1>
+
+    <div class="top-controls">
+        <button type="button" id="dark-mode-toggle">🌙</button> <button type="button" id="open-settings-btn">Opções
+            ⚙️</button>
+    </div>
+    <div id="game-container">
+
+        <div id="sudoku-board">
+        </div>
+
+        <div class="game-actions-container">
+            <div id="number-buttons" class="number-controls">
+
+                <button type="button" class="num-btn">1</button>
+                <button type="button" class="num-btn">2</button>
+                <button type="button" class="num-btn">3</button>
+                <button type="button" class="num-btn">4</button>
+                <button type="button" class="num-btn">5</button>
+                <button type="button" class="num-btn">6</button>
+                <button type="button" class="num-btn">7</button>
+                <button type="button" class="num-btn">8</button>
+                <button type="button" class="num-btn">9</button>
+                <button type="button" class="num-btn erase">X</button>
+            </div>
+            <div class="controls-main">
+                <button type="button" id="check-btn" class="btn-principal">Verificar</button>
+                <button type="button" id="notes-toggle-btn" class="btn-principal">Anotações 📝</button>
+            </div>
+            <div class="message-area-container">
+                <div id="message-area" class="message"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
