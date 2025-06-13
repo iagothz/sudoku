@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         boardElement.innerHTML = '';
 
         const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+        console.log('É um dispositivo de toque?', isTouchDevice);
 
         for (let i = 0; i < 81; i++) {
             const cell = document.createElement('div');
