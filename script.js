@@ -80,6 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createBoard() {
         boardElement.innerHTML = '';
+
+        const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
         for (let i = 0; i < 81; i++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
@@ -93,6 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
             input.maxLength = 1;
             input.dataset.row = row;
             input.dataset.col = col;
+
+            if (isTouchDevice) {
+                input.readOnly = true;
+            }
 
             input.addEventListener('input', handleDirectInput);
             input.addEventListener('focus', handleCellFocus);
